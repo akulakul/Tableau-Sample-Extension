@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
+     <dashboard-extension id="com.example.extension.hello.demo" extension-version="0.1.0">
+       <default-locale>en_US</default-locale>
+       <name resource-id="name"/>
+       <description>This is just a stupid first extension Tutorial... Damn this uninteresting project</description>
+       <author name="mrtn" email="mrtn@hotmail.com" organization="MyCo" website="https://i.have.no.website.com"/>
+       <min-api-version>1.0</min-api-version>
+       <source-location>
+         <url>http://localhost:8765/HelloDemo/HelloExtension.html</url>
+       </source-location>
+       <icon>
+          
+       </icon>
+     </dashboard-extension>
+     <resources>
+       <resource id="name">
+         <text locale="en_US">Cutesy little kitten</text>
+         <text locale="fr_BE">Cutesy little kitten in french</text>
+         <text locale="de_DE">Cutesy little kitten in German</text>
+       </resource>
+     </resources>
+   </manifest>

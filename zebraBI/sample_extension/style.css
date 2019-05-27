@@ -1,0 +1,31 @@
+h4, h5 {
+    text-align: center;
+  }
+  
+  div.DTS div.dataTables_scrollBody {
+    background: white;
+  }
+  
+  .sheet_name {
+    font-weight: bold;
+  }
+
+.axis text {
+  font: 12pt sans-serif;
+  font-family: 'Poiret One', cursive;
+  stroke: rgba(0, 89, 172, 0.603);
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: rgba(0, 89, 172, 0.603);
+  shape-rendering: crispEdges;
+}
+
+.mark path,
+.mark line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
