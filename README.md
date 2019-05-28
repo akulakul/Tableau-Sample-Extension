@@ -1,50 +1,23 @@
-# Tableau Extensions API
-[![Tableau Supported](https://img.shields.io/badge/Support%20Level-Tableau%20Supported-53bd92.svg)](https://www.tableau.com/support-levels-it-and-developer-tools)
+# Navodila za namestitev
 
-![Image of Flex the T-Rex](./assets/flex.png)
+## Inštalacija Tableau Desktop
+ 1. Na tej [spletni strani](https://www.tableau.com/products/trial) lahko dobite free trial za Tableau Desktop.
+ 2. Prenos aplikacije se bo avtomatsko začel, po namestitvi se lahko registrirate za free trial.
 
-## Why the Tableau Extensions API?
-The Extensions API lets you do more without leaving Tableau. Build Tableau extensions that can interact and communicate with Tableau, and embed them directly in your workbooks.
+## Postavitev okolja
+ 1. Poženite `git clone https://github.com/akulakul/Tableau-Sample-Extension.git` v željenem direktoriju.
+ 2. Nato v korenu direktorija Tableau-Sample-Extensions, torej `~\Tableau-Sample-Extension\` poženite ukaz `npm install`.
+ 3. V isti mapi poženite spletni strežnik z ukazom `npm start`.
+ 4. Ukaz `npm install` poženite še v `~\Tableau-Sample-Extensions\zebraBI\sample_extension\`.
 
-## Setup and Running Samples
+ ## Zagon Tableau-ja in vizualizacije
+ 1. V `~\Tableau-Sample-Extension\zebraBI\` odprite datoteko `Workbook.twbx`.
+ 2. Spodaj izberite `Sales Dashboard`
+    ![](./zebraBI/Navodila/Tableau_sales_dashboard.PNG)
+ 3. Kliknite in povlecite gumb `Extensions` (3.) na dashboard. Kliknite `My Extensions`.
+ 4. Izberite `test.trex` v `~\Tableau-Sample-Extension\zebraBI\sample_extension\` in pritisnite OK.
+ 5. Izberite `Global Sales & Profits`. (Ostale opcije ne bojo delovale, ker so vse vrednosti hardcoded v program)
 
-### Prerequisites
-* You must have Node.js and npm installed. You can get these from [http://nodejs.org](http://nodejs.org).
-
-### Setup
-1. Copy the `.trex` files of the sample you wish to run to `~\Documents\My Tableau Repository (Beta)\Extensions` so they are available to Tableau.
-2. Open a command prompt window to the location where you cloned this repo.
-3. Run `npm install`.
-4. Run `npm start`.
-5. Launch Tableau and use the sample in a dashboard.
-
- >**Note** The web server just serves the extension samples and tutorial, which have URLs similar to the following: `http://localhost:8765/Samples/DataSources/datasources.html`
- >   This local web server is not intended to serve the Extensions API Help pages. 
- >   View the Help on GitHub at [https://tableau.github.io/extensions-api](https://tableau.github.io/extensions-api).
-
-## Submissions
-We would love submissions to either the Docs or Sample code! To contribute, first sign our CLA that can be found [here](https://tableau.github.io/contributing.html).  To submit a contribution, please fork the repository then submit a pull request to the `submissions` branch.
-
-## Code Style
-Our sample code follows the [Semi-Standard Style](https://github.com/Flet/semistandard).  If you add your own extension code to the Samples directory, you can run `npm run lint` to validate the style of your code.  Please run this command before submitting any pull requests for Sample code.
-
-## Contributions
-Code contributions and improvements by the community are welcomed!
-See the LICENSE file for current open-source licensing and use information.
-
-Before we can accept pull requests from contributors, we require a signed [Contributor License Agreement (CLA)](http://tableau.github.io/contributing.html).
-
-## Documentation
-[Visit the project website and read the documentation here.](https://tableau.github.io/extensions-api/)
-
-
-## Issues
-Use [Issues](https://github.com/tableau/ProjectFrelard/issues) to log any problems or bugs you encounter in the docs or sample  code. 
-
-# Tableau Scatterplot using Extensions API and D3
-
-## Setup
-1. Open a command prompt window to the location where you cloned this repo.
-2. Run `npm install`.
-3. Run `npm start`.
-4. Open Tableau and import the extension in ~extensions-api-master/Samples/test/test.trex.
+## Tableau Developer Program
+ 1. Na tej [spletni strani](https://www.tableau.com/developer) se lahko registrirate za Tableau-jev developer program.
+ 2. S tem računom se lahko prijavite v [Tableau Online](https://online.tableau.com/), ki ponuja večino funckionalnosti Tableau Desktop-a.
