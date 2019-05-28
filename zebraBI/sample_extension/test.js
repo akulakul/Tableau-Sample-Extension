@@ -111,9 +111,6 @@
 
       // Call this function if you want to put in data from the dashboard! 
       setUpD3Test(formattedData);
-
-      // To draw data about flowers
-      // setUpD3(data);
     });
 
     // Add an event listener for the selection changed event on this sheet.
@@ -182,61 +179,6 @@
 
     renderTest(data, g, scales, cols, axis);
   }
-
-
-  /**
-   * This function sets up a "canvas".
-   */
-  function setUpD3(some_data) {
-    $('#no_data_message').css('display', 'none');
-
-    var outerWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var outerHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    outerHeight -= 75;
-
-    // Calculate width and height of the chart.
-    var margin = { left: 50, top: 30, right: 30, bottom: 30 };
-    var innerHeight = outerHeight - margin.top - margin.bottom;
-    var innerWidth = outerWidth - margin.left - margin.right;
-
-    var r = 20;
-    var xcol = 'sepal_length';
-    var ycol = 'petal_length';
-
-    // Create scales.
-    var xScale = d3.scale.linear().range([0, innerWidth]);
-    var yScale = d3.scale.linear().range([innerHeight, 0]);
-
-    // Create svg element that will act as cointainer.
-    var svg = d3.select('#d3_chart')
-    .attr('width', outerWidth)
-    .attr('height', outerHeight);
-
-    // Within the svg element create a group for the visualization.
-    var g = svg.append('g')
-    .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
-
-    // Within the circles group element create two groups for the axis.
-    var xAxisG = g.append('g')
-    .attr('class', 'axis')
-    .attr('transform', 'translate(0, ' + innerHeight + ')');
-    var yAxisG = g.append('g')
-    .attr('class', 'axis');
-
-    // Create axis
-    var xAxis = d3.svg.axis().scale(xScale).orient('bottom');
-    var yAxis = d3.svg.axis().scale(yScale).orient('left');
-
-    var data = [ { time: 10, sunki: 10 }, { time: 20, sunki: 20 }, { time: 30, sunki: 30 } ];
-
-    //render(data, g, xScale, yScale, r, xcol, ycol, xAxisG, yAxisG, xAxis, yAxis);
-
-    // Render the scatter plot.
-     d3.csv('./iris.csv', type, function (data) {
-      render(data, g, xScale, yScale, r, xcol, ycol, xAxisG, yAxisG, xAxis, yAxis);
-    });
-  }
-
 
   /**
    * All of the rendering is done within this function.
@@ -313,32 +255,6 @@
   function getColor(d, cScale, ccol) {
     if (d[ccol] < 0) return 'red';
     return 'green';
-  }
-
-  
-  /**
-   * This function does all of the drawing.
-   */
-  function render(data, g, xScale, yScale, r, xcol, ycol, xAxisG, yAxisG, xAxis, yAxis) {
-
-    xScale.domain(d3.extent(data, function (d) { return d[xcol]; }));
-    yScale.domain(d3.extent(data, function (d) { return d[ycol]; }));
-
-    xAxisG.call(xAxis);
-    yAxisG.call(yAxis);
-
-    var circles = g.selectAll('circle').data(data);
-    circles.enter().append('circle')
-    .attr('opacity', 0.3)
-    .attr('fill', 'black')
-    .attr('r', r)
-    .attr('class', 'mark');
-
-    circles
-    .attr('cx', function (d) { return xScale(d[xcol]); })
-    .attr('cy', function (d) { return yScale(d[ycol]); });
-  
-    circles.exit().remove();
   }
 
 
