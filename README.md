@@ -13,7 +13,7 @@
  ## Zagon Tableau-ja in vizualizacije
  1. V `~\Tableau-Sample-Extension\zebraBI\` odprite datoteko `Workbook.twbx`.
  2. Spodaj izberite `Sales Dashboard`
-    ![](./zebraBI/Navodila/Tableau_sales_dashboard.PNG)
+    ![](./zebraBI/other/screenshots/Tableau_sales_dashboard.PNG)
  3. Kliknite in povlecite gumb `Extensions` (3.) na dashboard. Kliknite `My Extensions`.
  4. Izberite `test.trex` v `~\Tableau-Sample-Extension\zebraBI\sample_extension\` in pritisnite OK.
  5. Izberite `Global Sales & Profits`. (Ostale opcije ne bojo delovale, ker so vse vrednosti hardcoded v program)
