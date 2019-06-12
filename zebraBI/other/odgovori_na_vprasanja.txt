@@ -1,0 +1,69 @@
+﻿1. Določitev podatkov za visual: 
+	Podatkov se ne da določiti na isti način kot pri default visualih,
+	niti se ne da narediti sheet-a in vanj uvoziti visuala.
+	Do podatkov se lahko dostopa le preko Extensions API-ja.
+	Pogledal sem tudi možnosti, ki bodo dodane v prihodnjih verzijah 
+	Tableau-ja in nikjer (vsaj za zdaj) ne kaže, da bi to funkcionalnost nameravali 
+	vgraditi v prihodnosti.
+
+
+   Preko Extensions API-ja se da dostopati do naslednjih podatkov:
+   (vsi podatki so vrnjeni v obliki DataTable objekta)
+
+	> podatki določenega worksheet-a (visual-a):
+
+		- POVZETEK PODATKOV: 
+  		  worksheet.getSummaryDataAsync()
+
+		- VSI PODATKI, ki se uporabljajo za določeni visual:
+		  (potrebujemo "full data" dovoljenje)
+		  worksheet.getUnderlyingDataAsync()
+		  
+		- podatke o TRENUTNO IZBRANIH OZNAKAH na visualu
+		  (recimo če kliknemo na oznake na visualu, potem ta funkcija vrne le
+		   podatke za te oznake)
+		  worksheet.getSelectedMarksAsync()
+
+		- podatke o trenutno "highlighted" oznakah na visualu
+		  worksheet.getHighlightedMarksAsync()
+
+	> Preko Extensions API-ja lahko dobimo tudi vse podatke, ki jih uporablja nek 
+	  visual (oziroma worksheet, tudi tukaj potrebujemo "full data" dovoljenje).
+	  // TODO: ALI LAHKO DOSTOPAMO DO VSEH PODATKOV, NE DA BI MORALI TO NAREDITI PREKO
+	  // WORKSHEETA
+	  // TODO: RAZLIKA MED getUnderlyingDataAsync() IN getDataSourcesAsync()
+
+	  najprej dostopamo do Podatkovnih Virov, ki jih uporablja določen visual (worksheet)
+	  z getUnderlyingDataAsync(), ki vrne več Datasource objektov, preko katerih dostopamo
+	  do dejanskih podatkov
+
+
+2. Označevanje elementov na visualu:
+	selectMarksByValueAsync(), ki posodobi trenutno izbrane podatke na visualu, s katerega
+	jemljemo podatke.
+
+	  
+3. Uvažanje / Distribucija:
+	Visuala se ne da zapakirati in poslati končnemu uporabniku. Visual je treba hostat na serverju,
+	potem pa se lahko uporabniku pošlje .trex (xml) datoteko, ki jo uvozi v Tableau.
+	// TODO: licenciranje, certifikacija
+
+4. Nastavitve: 
+	Ni možno uporabljati istih nastavitev kot pri default visualih na sheet-u.
+	Extension-a se ne da urejati in nastavljati na isti način kot default visuale. Da se jih samo
+	uvoziti v dashboard. Vse nastavitve (barve, popupi, ...) in kakršnokoli konfiguracijo je treba 
+	implementirati na novo.
+
+5. Drill down, Drill through.
+	O tem nisem nič našel, a glede na Extensions API bi rekel, da ni možno.
+
+Ostalo:
+ -	REST API: Uporablja se za kontroliranje in konfiguracijo Tableau Serverja.
+ - 	JavaScript API: Uporablja se za integracijo Tableau vizualizacij v spletne aplikacije.
+ - 	Document in Extract API
+
+
+
+
+
+

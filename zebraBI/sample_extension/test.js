@@ -4,6 +4,7 @@
 (function () {
   // Use the jQuery document ready signal to know when everything has been initialized
   $(document).ready(function () {
+
     // Tell Tableau we'd like to initialize our extension
     tableau.extensions.initializeAsync().then(function () {
       
@@ -106,10 +107,10 @@
       console.log(data);
       console.log(columns);
 
+      // Format the data
       const formattedData = formatData(data, columns);
       console.log(formattedData);
 
-      // Call this function if you want to put in data from the dashboard! 
       setUpD3Test(formattedData);
     });
 
@@ -122,7 +123,7 @@
 
 
   /**
-   * 
+   * prepare everything for drawing the scatterplot
    */
   function setUpD3Test(data) {
     $('#no_data_message').css('display', 'none');
@@ -279,7 +280,7 @@
     return button;
   }
   
-
+  
   function formatData(data, columns) {
     const formattedData = data.map(function (row) {
       var sales = parseFloat(row[3].replace(',', ''));
