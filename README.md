@@ -21,3 +21,11 @@
 ## Tableau Developer Program
  1. Na tej [spletni strani](https://www.tableau.com/developer) se lahko registrirate za Tableau-jev developer program.
  2. S tem računom se lahko prijavite v [Tableau Online](https://online.tableau.com/), ki ponuja večino funckionalnosti Tableau Desktop-a.
+
+
+ # Kako do scatterplota
+ 
+ ## Namestitev Tableau Extensions API SDK
+ 1. Z ukazom `git clone https://github.com/tableau/extensions-api.git` lahko prenesete potrebne datoteke za razvoj extensionov. Lahko jih prenesete tudi s [spletne strani](https://github.com/tableau/extensions-api/archive/master.zip).
+ 2. Naredite drugi in tretji korak iz odstavka "Postavitev okolja", torej (`npm install` in `npm start`, če želite pognati spletni strežnik).
+ 3. [Hello world extension](https://github.com/tableau/extensions-api/archive/master.zip)

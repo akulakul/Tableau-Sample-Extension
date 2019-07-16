@@ -46,7 +46,11 @@
 3. Uvažanje / Distribucija:
 	Visuala se ne da zapakirati in poslati končnemu uporabniku. Visual je treba hostat na serverju,
 	potem pa se lahko uporabniku pošlje .trex (xml) datoteko, ki jo uvozi v Tableau.
-	// TODO: licenciranje, certifikacija
+	
+   Licenciranje: 
+	Pregledal sem vse extension-e v Tableau-jevi galeriji. Vsako podjetje samo skrbi za licenco, pri
+	nobenem ni tako, da bi bilo vezano na Tableau.
+	Podjetja to večinoma rešujejo s prijavo ali pa z uporabo kakšnega ključa/tokena.
 
 4. Nastavitve: 
 	Ni možno uporabljati istih nastavitev kot pri default visualih na sheet-u.
@@ -56,6 +60,12 @@
 
 5. Drill down, Drill through.
 	O tem nisem nič našel, a glede na Extensions API bi rekel, da ni možno.
+
+6. Extension-i konkurence.
+	Večinoma so vsi extension-i v galeriji samo dodatki in ne vizualizacije, kot na primer 
+	kakšni filtri, writeback funkcionalnost, ...
+	Le en par extensionov je vizualizacij. Med temi so vsi "nekakovostni", kot ste videli
+	zadnjič na sestanku tisti "Show Me More", kjer se labele prekrivajo.
 
 Ostalo:
  -	REST API: Uporablja se za kontroliranje in konfiguracijo Tableau Serverja.
