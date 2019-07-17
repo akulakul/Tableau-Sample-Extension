@@ -29,9 +29,6 @@
 
 	> Preko Extensions API-ja lahko dobimo tudi vse podatke, ki jih uporablja nek 
 	  visual (oziroma worksheet, tudi tukaj potrebujemo "full data" dovoljenje).
-	  // TODO: ALI LAHKO DOSTOPAMO DO VSEH PODATKOV, NE DA BI MORALI TO NAREDITI PREKO
-	  // WORKSHEETA
-	  // TODO: RAZLIKA MED getUnderlyingDataAsync() IN getDataSourcesAsync()
 
 	  najprej dostopamo do Podatkovnih Virov, ki jih uporablja določen visual (worksheet)
 	  z getUnderlyingDataAsync(), ki vrne več Datasource objektov, preko katerih dostopamo
@@ -48,8 +45,8 @@
 	potem pa se lahko uporabniku pošlje .trex (xml) datoteko, ki jo uvozi v Tableau.
 	
    Licenciranje: 
-	Pregledal sem vse extension-e v Tableau-jevi galeriji. Vsako podjetje samo skrbi za licenco, pri
-	nobenem ni tako, da bi bilo vezano na Tableau.
+	Pregledal sem vse extension-e v Tableau-jevi galeriji. Podjetja sama skrbijo za licenco, pri
+	nobenem ni tako, da bi bila licenca vezano na Tableau.
 	Podjetja to večinoma rešujejo s prijavo ali pa z uporabo kakšnega ključa/tokena.
 
 4. Nastavitve: 
